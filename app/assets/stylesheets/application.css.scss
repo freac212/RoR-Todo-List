@@ -30,7 +30,7 @@ html{
 body {
   font: 100% $font-stack;
   color: $primary-colour;
-  max-width: 1400px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -53,10 +53,13 @@ a {
   margin-left: $normal-spacing;
 }
 
+.header-title{
+  margin-bottom: 0;
+}
+
 .button{
   padding: $button-spacing;
   margin: auto;
-  // background-color: grey;
   border-radius: $button-spacing;
 }
 
@@ -75,4 +78,10 @@ p, span, h1, h2, h3, h4, h5{
 
 .spacer{
   flex: 1 1 auto;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

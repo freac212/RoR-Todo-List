@@ -1,8 +1,9 @@
-- if flash[:notice]
-  .notice= flash[:notice]
+-# - if flash[:notice]
+-#   .notice= flash[:notice]
 
-%h1 Listing Todo Lists
-= link_to 'New Todo List', new_list_path
+%header
+  %h1.header-title Your Todo Lists
+  = link_to 'Create New Todo List', new_list_path
 
 .todo-list-container
   - if @lists.count <= 0
@@ -21,6 +22,9 @@
             .list-info-button.button
               =link_to icon('fas', 'trash'), list_path(list), method: :delete, data: { confirm: 'Are you sure you want to delete this list?' }
         .todo-outer-cont
-          = render list.todos.sort_by { |todo| todo.completed? ? 1 : 0 }
           -# I want the completed todos to fall to the bottom of the todo list. I learned an interesting thing about sorting boolean values in Ruby.
-          -# - list.todos.sort_by { |todo| todo.completed? ? 1 : 0 }.each do |todo|
+          = render list.todos.select { |todo| !todo.completed }.sort_by { |todo| todo.completed? ? 1 : 0 }
+          - if list.todos.select { |todo| todo.completed }.count > 0 
+            %h2 Completed Todos
+            = render list.todos.select { |todo| todo.completed }
+
