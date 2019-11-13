@@ -10,12 +10,11 @@
       There's no todo lists - 
       = link_to 'Create one here! :D', new_list_path
   - else 
-    .notice= flash[:notice]
     - @lists.each do |list|
       .list-container
         .list-info-cont
-          %h2= list.title
-          .list-info-spacer
+          %h2.title-text= list.title
+          .spacer
           .list-info-button-cont
             .list-info-button.button
               =link_to icon('fas', 'plus'), new_list_todo_path(list)
@@ -26,8 +25,9 @@
           - list.todos.sort_by { |todo| todo.completed? ? 1 : 0 }.each do |todo|
             .todo-container
               .todo-info-cont
-                %h3.todo-title= todo.title 
+                %h3.todo-title.title-text= todo.title 
                 %span.todo-description= todo.description
+              .spacer
               .todo-buttons-cont
                 -# ++Q will change to check box later.
                 .todo-complete.button

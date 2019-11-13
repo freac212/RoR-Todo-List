@@ -2,18 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.list-info-cont{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.list-container{
+  max-width: 750px;
+  flex: 1 0 auto;
 }
 
-.list-info-spacer{
-  flex: 1 1 auto;
-}
-
-.list-info-button-cont{
+.list-info-cont, .list-info-button-cont{
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
+  .list-info-cont{
+    justify-content: space-between;
+  }
+
+  .list-info-button-cont{
+    align-items: center;
+  }

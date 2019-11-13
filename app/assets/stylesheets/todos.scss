@@ -10,21 +10,26 @@
   padding-left: 20px;
 }
 
+.todo-list-container, .todo-container, .todo-info-cont, .todo-buttons-cont{
+  display: flex;
+}
+
+.todo-list-container{
+  flex-flow: wrap;
+  justify-content: center;
+}
+
 .todo-container{
   border-bottom: 1px solid #808080;
-
-  display: flex;
   flex-direction: row;
 }
 
 .todo-info-cont{
-  display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
 }
 
 .todo-buttons-cont{
-  display: flex;
   flex-direction: row;
   flex: 0 1 auto;
+  margin-left: 25px;
 }

@@ -20,6 +20,8 @@ $font-stack:    Helvetica, sans-serif;
 $primary-colour: #333;
 $primary-bg-colour: #e8e8e8;
 $secondary-bg-colour: #ffffff;
+$normal-spacing: 25px;
+$button-spacing: 10px;
 
 html{
   background-color: $primary-bg-colour;
@@ -28,6 +30,8 @@ html{
 body {
   font: 100% $font-stack;
   color: $primary-colour;
+  max-width: 1400px;
+  margin: auto;
 }
 
 a {
@@ -37,16 +41,38 @@ a {
 
 .list-container{
   background-color: $secondary-bg-colour;
-  border-radius: 25px;
-  padding: 25px;
-  margin: 25px;
+  border-radius: $normal-spacing;
+  padding: $normal-spacing;
+  margin: $normal-spacing;
   -webkit-box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
   box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
 }
 
+.list-info-button-cont{
+  margin-left: $normal-spacing;
+}
+
 .button{
-  padding: 10px;
+  padding: $button-spacing;
+  margin: auto;
   // background-color: grey;
-  border-radius: 10px;
+  border-radius: $button-spacing;
+}
+
+p, span, h1, h2, h3, h4, h5{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+
+  // Taken from here: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.spacer{
+  flex: 1 1 auto;
 }
