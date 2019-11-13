@@ -3,4 +3,9 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
   end
+
+  # GET lists/new
+  def new 
+    @list = List.new
+  end
 end
