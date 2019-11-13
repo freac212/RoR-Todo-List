@@ -27,6 +27,20 @@ class TodosController < ApplicationController
     redirect_to lists_index_path
   end
 
+  # PUT todos/id/complete
+  def complete
+    @todo = Todo.find(params[:id])
+
+    completed = @todo.completed ? false : true
+   
+    if @todo.update(completed: completed)
+      redirect_to lists_index_path
+    else
+      flash[:notice] = "Issue Completing Todo... Call an admin or something 🤷‍♂️"
+      redirect_to lists_index_path
+    end
+  end
+
   private
   def todo_params
     # ++Q where does params come from?

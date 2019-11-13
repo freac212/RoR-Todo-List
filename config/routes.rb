@@ -7,5 +7,12 @@ Rails.application.routes.draw do
     resources :todos, only: [:index, :new, :create, :destroy]
   end
 
+  # Custom route to allow completion of todos
+  resources :todos do
+    member do
+      put :complete
+    end
+  end
+
   resources :todos, only: [:index, :destroy]
 end
