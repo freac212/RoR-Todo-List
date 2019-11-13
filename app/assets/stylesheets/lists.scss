@@ -1,3 +1,19 @@
 // Place all the styles related to the Lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.list-info-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-info-spacer{
+  flex: 1 1 auto;
+}
+
+.list-info-button-cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
