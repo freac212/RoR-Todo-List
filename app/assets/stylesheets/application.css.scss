@@ -15,3 +15,38 @@
  */
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+$font-stack:    Helvetica, sans-serif;
+$primary-colour: #333;
+$primary-bg-colour: #e8e8e8;
+$secondary-bg-colour: #ffffff;
+
+html{
+  background-color: $primary-bg-colour;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-colour;
+}
+
+a {
+  color: $primary-colour;
+  text-decoration: none;
+}
+
+.list-container{
+  background-color: $secondary-bg-colour;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 25px;
+  -webkit-box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.5);
+}
+
+.button{
+  padding: 10px;
+  // background-color: grey;
+  border-radius: 10px;
+}
