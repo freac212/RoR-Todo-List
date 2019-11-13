@@ -18,6 +18,15 @@ class TodosController < ApplicationController
     end
   end
 
+  # DELETE todos/id
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    
+    flash[:notice] = "Todo Deleted..."
+    redirect_to lists_index_path
+  end
+
   private
   def todo_params
     # ++Q where does params come from?
