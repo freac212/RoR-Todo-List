@@ -1,0 +1,14 @@
+.todo-container
+  .todo-info-cont
+    %h3.todo-title.title-text= todo.title 
+    %span.todo-description= todo.description
+  .spacer
+  .todo-buttons-cont
+    -# ++Q will change to check box later.
+    .todo-complete.button
+      =form_for todo, remote: true do |form|
+        =form.check_box :completed
+      =link_to icon('fas', 'check'), complete_todo_path(todo), method: :put
+
+    .todo-delete.button
+      =link_to icon('fas', 'trash'), todo_path(todo), method: :delete, data: { confirm: 'Are you sure you want to delete this todo?' }
