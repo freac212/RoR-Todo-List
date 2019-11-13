@@ -51,3 +51,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Using HAML instead of ERB
 gem "haml-rails", "~> 2.0"
+
+# Using font awesome for icons, helping the app look a bit better.
+gem 'font-awesome-sass', '~> 5.11.2'
