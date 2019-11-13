@@ -85,3 +85,7 @@ header{
   flex-direction: row;
   justify-content: space-between;
 }
+  header > a{
+    text-align: center;
+    line-height: 64px;
+  }
